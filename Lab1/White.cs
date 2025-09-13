@@ -7,7 +7,7 @@
             bool answer = false;
 
             // code here
-
+            answer = d > 0;
             // end
 
             return answer;
@@ -17,7 +17,7 @@
             bool answer = false;
 
             // code here
-
+            answer = n % 2 == 0;
             // end
 
             return answer;
@@ -27,7 +27,14 @@
             int answer = 0;
 
             // code here
-
+            if (a > b)
+            {
+                answer = a;
+            }
+            else
+            {
+                answer = b;
+            }
             // end
 
             return answer;
@@ -37,6 +44,15 @@
             double answer = 0;
 
             // code here
+            if (Math.Abs(d) < Math.Abs(f)){
+
+                answer = d;
+
+            }
+            else
+            {
+                answer = f;
+            }
 
             // end
 
@@ -47,7 +63,13 @@
             double answer = 0;
 
             // code here
-
+            if (Math.Abs(x)>1) {
+                answer = 1;
+            }
+            else
+            {
+                answer = x;
+            }
             // end
 
             return answer;
@@ -57,7 +79,13 @@
             bool answer = false;
 
             // code here
-
+            if (Math.Abs(x*x +y*y - r*r) <= 10e-6) {
+                answer = true;
+            }
+            else
+            {
+                answer = false;
+            }
             // end
 
             return answer;
@@ -69,6 +97,16 @@
 
             // code here
 
+            int s = n*n;
+
+            if (n>3 && n%2==0)
+            {
+                    answer = true;
+            }
+            else
+            {
+                answer = false;
+            }
             // end
 
             return answer;
@@ -78,7 +116,7 @@
             bool answer = false;
 
             // code here
-
+            answer = (L <= 3 * 10) && ((T + M >= 5)) && (M % 2 == 0);
             // end
 
             return answer;

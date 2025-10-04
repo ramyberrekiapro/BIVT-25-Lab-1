@@ -1,4 +1,4 @@
-﻿namespace Lab1
+namespace Lab1
 {
     public class Purple
     {
@@ -6,109 +6,76 @@
         {
             bool answer = false;
 
-            // code here
-                if (a > 0 && b>0 && c>0) {
+            if (a > 0 && b > 0 && c > 0)
                 answer = true;
-                }
-                else if (a<0 && b<0 && c<0) {
+            else if (a < 0 && b < 0 && c < 0)
                 answer = true;
-                }
-                else if (a == 0 && b == 0 && c == 0)
-                {
+            else if (a == 0 && b == 0 && c == 0)
                 answer = true;
-                }
-                else { 
-                    answer = false;
-                    }
-            // end
+            else
+                answer = false;
 
             return answer;
         }
+
         public bool Task2(int a, int b)
         {
             bool answer = false;
 
-            // code here
-
-            if (a!=0 && b!=0){
-                if (a % b == 0 || b % a == 0)
-                {
-                    answer = true;
-                }
-                else
-                {
-                    answer = false;
-                }
-            }
+            // fixed: divide zero checks per variable
+            if ((b != 0 && a % b == 0) || (a != 0 && b % a == 0))
+                answer = true;
             else
-            {
                 answer = false;
-            }
-            // end
 
             return answer;
         }
+
         public bool Task3(int a, int b)
         {
             bool answer = false;
 
-            // code here
-            if (a*a*a==b || a*a ==b || b*b==a || b * b * b == a)
-            {
+            if (a * a * a == b || a * a == b || b * b == a || b * b * b == a)
                 answer = true;
-            }
             else
-            {
                 answer = false;
-            }
-            // end
 
             return answer;
         }
+
         public double Task4(double d, double f, double g)
         {
             double answer = 0;
 
-            // code here
-            answer = (f * f) - (4*d*g);
-            // end
+            // discriminant
+            answer = (f * f) - (4 * d * g);
 
             return answer;
         }
+
         public double Task5(double x)
         {
             double answer = 0;
 
-            // code here
-                if (x<= -1)
-            {
+            if (x <= -1)
                 answer = 1;
-            }
-                else if (x>1)
-            {
+            else if (x > 1)
                 answer = -1;
-            }
-                else
-            {
+            else
                 answer = x * (-1);
-            }
-            // end
 
             return answer;
         }
+
         public bool Task6(double squareS, double circleS)
         {
             bool answer = false;
 
-            // code here
-
-            if (Math.Sqrt(2 * circleS) <= 2 * Math.Sqrt(squareS / Math.PI))
-            {
+            // fixed variable order
+            if (Math.Sqrt(2 * squareS) <= 2 * Math.Sqrt(circleS / Math.PI))
                 answer = true;
-            }
 
-            // end
-
+            // note: 10e-4 tolerance if needed
             return answer;
         }
 
@@ -116,70 +83,53 @@
         {
             int answer = 0;
 
-            // code here
-
             if (s)
             {
                 if (t)
-                {
                     answer = 6;
-                }
                 else
-                {
-                    if (f)
-                    {
-                        answer = 10;
-                    }
-                    else
-                    {
-                        answer = 2;
-                    }
-                }
+                    answer = f ? 10 : 2;
             }
             else
             {
                 if (t)
-                {
                     answer = 3;
-                }
                 else
-                {
-                    if (f)
-                    {
-                        answer = 5;
-                    }
-                    else
-                    {
-                        answer = 1;
-                    }
-                }
+                    answer = f ? 5 : 1;
             }
-            // end
 
             return answer;
         }
+
+        // optional numeric Task7 variant
+        public int Task7_alt(int n)
+        {
+            int answer = 0;
+
+            if (n > 3 && n % 2 == 0)
+                answer = n * 2;
+            else
+                answer = n + 1;
+
+            return answer;
+        }
+
         public bool Task8(int year, int pupils, int salary)
         {
             bool answer = false;
             const int bank = 10000;
 
-            // code here
-            if (year%400==0 || (year%100!=0 && year % 4 == 0))
+            if (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
             {
                 answer = false;
             }
             else
             {
-                if (((int)Math.Ceiling(pupils / 7.0)) *salary + (pupils*5) <= bank)
-                {
+                if (((int)Math.Ceiling(pupils / 7.0)) * salary + (pupils * 5) <= bank)
                     answer = true;
-                }
                 else
-                {
                     answer = false;
-                }
             }
-            // end
 
             return answer;
         }
